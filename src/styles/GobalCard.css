@@ -1,0 +1,18 @@
+.global {
+  width: 260px;
+  text-align: center;
+  padding: 25px;
+  border-radius: 10px;
+  background: #f9f9f9;
+}
+
+.global h3, .global2 h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+/* No background */
+.global2{
+  padding: 25px;
+  border-radius: 10px;
+}

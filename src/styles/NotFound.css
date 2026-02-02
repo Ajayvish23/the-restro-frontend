@@ -1,0 +1,51 @@
+.notfound-container {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.oops-text {
+  font-size: 8rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+
+  /* Image / gradient text effect */
+  /*background: linear-gradient(135deg, #1e3c72, #2a5298);*/
+  background: url("../assets/galaxy.jpg");
+  background-size: cover;
+  background-position: center;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.error-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.error-desc {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 2rem;
+  max-width: 500px;
+}
+
+.home-btn {
+  text-decoration: none;
+  background: #2563eb;
+  color: white;
+  padding: 0.75rem 1.8rem;
+  border-radius: 30px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.home-btn:hover {
+  background: #1e40af;
+  transform: translateY(-2px);
+}

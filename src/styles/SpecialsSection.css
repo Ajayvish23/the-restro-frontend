@@ -1,0 +1,21 @@
+.specials {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.specials h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.specials-subtitle {
+  color: #666;
+  margin-bottom: 40px;
+}
+
+.specials-container {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+}

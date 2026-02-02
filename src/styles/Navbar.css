@@ -1,0 +1,20 @@
+.navBar{
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    background-color: #f3f3f3;
+    height: 4rem;
+}
+
+.home-nav{
+    margin-left: 20px;
+}
+
+.navbar-brand{
+    text-decoration: none;
+}
+
+.user-dropdown{
+    margin-left: auto;
+    margin-right: 10px;
+}

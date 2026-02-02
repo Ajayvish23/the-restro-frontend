@@ -1,0 +1,95 @@
+.btn {
+  padding: 14px 30px;
+  font-size: 1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+/* Rectangular shape */
+.btn-main {
+  background-color: #ff4d30;
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.2s ease;
+}
+
+.btn-main:hover {
+  background-color: #e63e25;
+}
+
+/* Primary */
+.btn-primary {
+  background-color: #ff4d30;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #e63e25;
+}
+
+/* Secondary */
+.btn-secondary {
+  background: transparent;
+  color: #ff4d30;
+  border: 2px solid #ff4d30;
+}
+
+.btn-secondary:hover {
+  background-color: #ff4d30;
+  color: white;
+}
+
+/* White (for dark backgrounds) */
+.btn-white {
+  background: white;
+  color: #ff4d30;
+}
+
+.btn-white:hover {
+  background: #f1f1f1;
+}
+
+
+/* CTA buttons */
+.btn-third {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.btn-third:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+
+/* Buy now buttons */
+.btn-buy {
+  padding: 11px 11px !important;
+  font-size: 13px !important;
+  background: #ff4d30;
+  color: white;
+  border: 2px solid white;
+}
+
+.btn-cart{
+  padding: 11px 11px !important;
+  font-size: 13px !important;
+  background: black;
+  color: white;
+  border: 2px solid white;
+}
+
+.btn-cart:hover{
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.btn-buy:hover{
+  background: rgba(253, 80, 6, 0.87);
+}
