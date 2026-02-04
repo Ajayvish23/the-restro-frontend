@@ -1,9 +1,9 @@
 import MenuCard from "../components/MenuCard";
 import "../styles/Menu.css";
 import BottomSection from "../components/BottomSection.jsx";
-import {useEffect, useRef, useState} from "react";
+import {useEffect, useState} from "react";
 
-export default function Menu(user) {
+export default function Menu({user}) {
     const [menu,setMenu]=useState([]);
 
     useEffect(() => {
@@ -27,7 +27,6 @@ export default function Menu(user) {
   //   fetchMenu();
   // }, []);
 
-    let itemRef = useRef(null);
 
     return (
         <section className="menu-page">
@@ -39,7 +38,6 @@ export default function Menu(user) {
             <div className="menu-container">
                 {menu.map((item) => (
                     <MenuCard
-                        ref={itemRef}
                         key={item._id}
                         id={item._id}
                         name={item.name}

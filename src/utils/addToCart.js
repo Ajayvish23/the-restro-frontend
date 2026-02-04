@@ -17,6 +17,7 @@ export default async function addToCart(id,name,price,image,user){
             image:image,
             },
             {withCredentials:true});
+        toast.success("Added to cart!");
         // console.log(name);
         // console.log(id);
         // console.log(user);

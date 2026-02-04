@@ -10,6 +10,7 @@ import ScrollToTop from "./components/ScrollToTop.jsx";
 import NotFound from "./components/NotFound.jsx";
 import Login from "./pages/Login.jsx";
 import Signup from "./pages/Signup.jsx";
+import MyProfile from "./pages/MyProfile.jsx";
 import axios from "axios";
 import {useEffect, useState} from "react";
 import {toast, ToastContainer} from "react-toastify";
@@ -20,11 +21,21 @@ function App() {
     let [userdata, setUserdata]=useState("");
 
 
-    useEffect(() => {
-        axios.get("http://localhost:8000/api/getuser", {withCredentials:true})
-            .then(res=>setUserdata(res.data.user))
-            .catch(err=>console.log(err))
-    }, []);
+useEffect(() => {
+    const fetchUser = async () => {
+        try{
+            const res = await axios.get(
+              "http://localhost:8000/api/getuser",
+              { withCredentials: true }
+            );
+            setUserdata(res.data.user);
+        }catch{
+          console.log("Not logged in");
+        }
+    };
+   
+  fetchUser();
+}, []);
 
     let logoutHandler= async ()=>{
         await axios.post("http://localhost:8000/api/logout",
@@ -42,13 +53,14 @@ function App() {
             <div className={"main"}>
                 <ScrollToTop></ScrollToTop>
                 <Routes>
-                    <Route path="/" element={<Home/>} />
+                    <Route path="/" element={<Home user={userdata}/>} />
                     <Route path="/menu" element={<Menu user={userdata}/>} />
                     <Route path="/about" element={<About/>} />
                     <Route path="/contact" element={<Contact/>} />
                     <Route path="/login" element={<Login setUser={setUserdata}/>} />
                     <Route path="/signup" element={<Signup/>} />
                     <Route path="/cart" element={<Cart/>} />
+                    <Route path="/profile" element={<MyProfile user={userdata}/>} />
                     <Route path="*" element={<NotFound/>} />
                 </Routes>
                 <ToastContainer

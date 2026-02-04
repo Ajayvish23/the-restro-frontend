@@ -34,7 +34,7 @@ export default function UserDropdown({user, logout}) {
                 {open && (
                     <div className="dropdown-menu">
                         {user?<>
-                            <Link to={"#"} onClick={() => setOpen(false)}>Profile</Link>
+                            <Link to={"/profile"} onClick={() => setOpen(false)}>Profile</Link>
                             <Link to={"#"} onClick={() => setOpen(false)}>My Orders</Link>
                             <Link to={"/"} onClick={logout}>Logout</Link>
                             </>:<>

@@ -11,9 +11,10 @@ export default function Cart(){
     useEffect(() => {
         const fetchCartData= async()=>{
             try{
-            let res= await axios.get("http://localhost:8000/api/cart",{withCredentials:true});
-            setCart(res.data)
-            // console.log(res);
+                let res= await axios.get("http://localhost:8000/api/cart",{withCredentials:true});
+                setCart(res.data)
+                // console.log(res);
+                // console.log("Cart API response:", res.data);
             }catch (err){
                 console.log(err);
             }

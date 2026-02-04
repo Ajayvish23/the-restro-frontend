@@ -10,6 +10,7 @@ export default function Navbar({user, logout}){
             <Link to={"/contact"} className="navbar-brand">Contact</Link>
             <Link to={"/about"} className="navbar-brand">About</Link>
             <Link to={"/cart"} className="navbar-brand">Cart</Link>
+
             <UserDropdown className={"user-dropdown"} user={user} logout={logout}></UserDropdown>
         </nav>
     )
