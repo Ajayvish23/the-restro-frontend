@@ -11,11 +11,11 @@ import NotFound from "./components/NotFound.jsx";
 import Login from "./pages/Login.jsx";
 import Signup from "./pages/Signup.jsx";
 import MyProfile from "./pages/MyProfile.jsx";
-import axios from "axios";
 import {useEffect, useState} from "react";
 import {toast, ToastContainer} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Cart from "./pages/Cart.jsx";
+import api from "./api/axios.js";
 
 function App() {
     let [userdata, setUserdata]=useState("");
@@ -24,8 +24,8 @@ function App() {
 useEffect(() => {
     const fetchUser = async () => {
         try{
-            const res = await axios.get(
-              "http://localhost:8000/api/getuser",
+            const res = await api.get(
+              "/api/getuser",
               { withCredentials: true }
             );
             setUserdata(res.data.user);
@@ -38,7 +38,7 @@ useEffect(() => {
 }, []);
 
     let logoutHandler= async ()=>{
-        await axios.post("http://localhost:8000/api/logout",
+        await api.post("/api/logout",
             {},
             {withCredentials:true}
         );

@@ -3,6 +3,7 @@ import axios from "axios";
 import "../styles/Cart.css"
 import Button from "../components/Button.jsx";
 import {useLocation} from "react-router-dom";
+import api from "../api/axios.js";
 
 export default function Cart(){
     let [cart, setCart] = useState([])
@@ -11,7 +12,7 @@ export default function Cart(){
     useEffect(() => {
         const fetchCartData= async()=>{
             try{
-                let res= await axios.get("http://localhost:8000/api/cart",{withCredentials:true});
+                let res= await api.get("/api/cart",{withCredentials:true});
                 setCart(res.data)
                 // console.log(res);
                 // console.log("Cart API response:", res.data);
@@ -24,7 +25,7 @@ export default function Cart(){
 
     async function removeItem(id){
         try{
-            await axios.post("http://localhost:8000/api/cart/delete", {id},{withCredentials:true});
+            await api.post("/api/cart/delete", {id},{withCredentials:true});
             setCart(prevCart => prevCart.filter(item => item._id !== id));
             console.log(id);
         }catch(err){
@@ -38,7 +39,7 @@ export default function Cart(){
     const setQuantity=async(id,inc)=>{
         try{
             // let inc=true
-            await axios.post("http://localhost:8000/api/cart/update",{id,inc},{withCredentials:true});
+            await api.post("/api/cart/update",{id,inc},{withCredentials:true});
             if(inc){
                 setCart(prevCart=>prevCart.map((item)=> (item._id===id)?{...item, quantity:item.quantity+1}:item));
             }

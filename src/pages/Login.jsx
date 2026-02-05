@@ -3,6 +3,7 @@ import axios from "axios";
 import "../styles/Login.css"
 import {useNavigate} from "react-router-dom";
 import {toast} from "react-toastify";
+import api from "../api/axios.js";
 
 export default function Login({setUser}){
     let [username, setUsername]=useState("");
@@ -24,7 +25,7 @@ export default function Login({setUser}){
         console.log(username, password);
 
         try{
-            let res= await axios.post("http://localhost:8000/api/login",
+            let res= await api.post("/api/login",
             {username, password},
             {withCredentials:true}  //for session to persist
             )
@@ -42,7 +43,7 @@ export default function Login({setUser}){
     }
 
     let logoutHandler= async ()=>{
-        await axios.post("http://localhost:8000/api/logout",
+        await api.post("/api/logout",
             {},
             {withCredentials:true}
         );
@@ -50,7 +51,7 @@ export default function Login({setUser}){
     }
 
     useEffect(() => {
-        axios.get("http://localhost:8000/api/getuser", {withCredentials:true})
+        api.get("/api/getuser", {withCredentials:true})
             .then(res=>setUserdata(res.data.user))
             .catch(err=>console.log(err))
     }, []);

@@ -2,6 +2,7 @@ import {useState} from "react";
 import axios from "axios";
 import "../styles/Signup.css"
 import {toast} from "react-toastify";
+import api from "../api/axios.js";
 export default function Signup(){
     let [username, setUsername]=useState("");
     let [email, setEmail]=useState("");
@@ -26,7 +27,7 @@ export default function Signup(){
         event.preventDefault();
         console.log(email, password);
 
-        axios.post("http://localhost:8000/api/register", {username,email, password},{withCredentials:true})
+        api.post("/api/register", {username,email, password},{withCredentials:true})
             .then(res=>setMessage(res.data.message))
             .catch(err=>setMessage(err.response.data.message))
 

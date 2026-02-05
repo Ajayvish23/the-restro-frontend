@@ -1,5 +1,6 @@
 import axios from "axios";
 import {toast} from "react-toastify";
+import api from "../api/axios.js";
 
 export default async function addToCart(id,name,price,image,user){
     if (!user) {
@@ -8,7 +9,7 @@ export default async function addToCart(id,name,price,image,user){
     }
 
     try{
-        await axios.post("http://localhost:8000/api/cart",
+        await api.post("/api/cart",
             {
             itemId: id,
             name: name,

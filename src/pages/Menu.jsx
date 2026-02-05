@@ -2,30 +2,17 @@ import MenuCard from "../components/MenuCard";
 import "../styles/Menu.css";
 import BottomSection from "../components/BottomSection.jsx";
 import {useEffect, useState} from "react";
+import {API_BASE_URL} from "../api/fetch.js";
 
 export default function Menu({user}) {
     const [menu,setMenu]=useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:8000/api/menu")
+        fetch(`${API_BASE_URL}/api/menu`)
             .then((res)=>(res.json()))
             .then((data)=>setMenu(data))
             .catch(err => console.error(err));
     }, []);
-
-  // useEffect(() => {
-  //   const fetchMenu = async () => {
-  //     try {
-  //       const res = await fetch("http://localhost:8000/api/menu");
-  //       const data = await res.json();
-  //       setMenu(data);
-  //     } catch (error) {
-  //       console.error(error);
-  //     }
-  //   };
-  //
-  //   fetchMenu();
-  // }, []);
 
 
     return (

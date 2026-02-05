@@ -12,19 +12,6 @@ export default function MenuCard({image, name, price,id,user}){
     }
 
 
-    // let addToCart=() => {
-    //     axios.post("http://localhost:8000/api/cart",
-    //         {
-    //         itemId: id,
-    //         name: name,
-    //         price: price,
-    //         quantity: 1,
-    //         },
-    //         {withCredentials:true});
-    //     console.log(name);
-    //     console.log(id);
-    // }
-
     return(
         <div className={"menu-card"}>
             <img src={image} alt={name}/>
